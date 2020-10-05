@@ -123,13 +123,13 @@ include $(MK)/defs
 
 #----------------------------------------------------------------------------------------------
 
-.PHONY: package tests unittests clean all install uninstall docker bindirs
+.PHONY: package tests unittests clean all install uninstall docker bindirs fetch
 
 all: bindirs $(TARGET)
 
 include $(MK)/rules
 
-rmutil:
+rmutil: fetch
 	@echo Building $@...
 	$(SHOW)$(MAKE) -C $(ROOT)/build/rmutil
 
